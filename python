@@ -1,0 +1,40 @@
+#variáveis 
+linhas = 10
+colunas = 2
+mat_times = []
+mat_plac = []
+vencedores = []
+
+#matrizes
+for i in range (linhas):
+  mat_times.append([0] * colunas)
+
+  mat_plac.append([0] * colunas)
+
+#times e placares
+for i in range (linhas):
+   for j in range (colunas):
+     print ('Times que se enfrentaram', i+1, ':', end= '')
+     mat_times[i][j] = input ('')
+   print()
+for i in range (linhas):
+  for j in range (colunas):
+    print('Digite qual foi o placar do jogo', i+1,':', end= '')
+    mat_plac[i][j] = int(input())
+  print()
+
+#placar do jogo
+for p in range(linhas):
+  if mat_plac[p][0] > mat_plac [p][1]:
+    vencedores.append(mat_times[p][0])
+  elif mat_plac[p][0] < mat_plac [p][1]:
+    vencedores.append(mat_times[p][1])
+
+#saída
+if len(vencedores) == 0:
+  print ('O resultado de todos os jogos deram empate')
+else:
+  print('Times que venceram seus jogos: ', end= '')
+  for v in range (len(vencedores)-1):
+    print (vencedores[v], end = ' - ')
+  print(vencedores [v + 1])
